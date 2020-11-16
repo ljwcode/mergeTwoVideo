@@ -21,6 +21,9 @@
 
 @implementation videoEditor
 
+/*
+  音视频合并核心方法
+ */
 -(void)buildTransitionCompostion:(AVMutableComposition *)composition andVideoComposition:(AVMutableVideoComposition *)videoComposition andAudioMix:(AVMutableAudioMix *)audioMix{
     CMTime NextClipTime = kCMTimeZero;
     NSUInteger clipsCount = [self.clips count];

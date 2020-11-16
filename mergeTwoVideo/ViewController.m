@@ -13,12 +13,18 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "VideoPlayerContainerView.h"
 
+
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+
 @interface ViewController (){
     float            _transitionDuration;
     BOOL            _transitionsEnabled;
 }
 
 @property(nonatomic,strong)videoEditor *VEditor;
+
+@property(nonatomic,strong)VideoPlayerContainerView *playerView;
 
 @property(nonatomic,strong) NSMutableArray *clips;
 @property(nonatomic,strong) NSMutableArray *clipTimeRanges;
@@ -27,12 +33,21 @@
 
 @implementation ViewController
 
+-(void)viewDidLayoutSubviews{
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _transitionsEnabled = YES;
+    _transitionDuration = 2.0;
     self.VEditor = [[videoEditor alloc]init];
     self.clips = [NSMutableArray array];
     self.clipTimeRanges = [NSMutableArray array];
     
+    _playerView = [[VideoPlayerContainerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [self.view addSubview:_playerView];
+    [self PlayBack];
     // Do any additional setup after loading the view.
 }
 
@@ -70,7 +85,7 @@
         }
         if (bSuccess && CMTimeGetSeconds(asset.duration) > 5) {
             [self.clips addObject:asset];
-            [self.clipTimeRanges addObject:[NSValue valueWithCMTimeRange:CMTimeRangeMake(CMTimeMakeWithSeconds(0, 1), CMTimeMakeWithSeconds(5, 1))]];
+            [self.clipTimeRanges addObject:[NSValue valueWithCMTimeRange:CMTimeRangeMake(CMTimeMakeWithSeconds(0, 1), CMTimeMakeWithSeconds(50, 1))]];
         }
         else {
             NSLog(@"error ");
@@ -84,6 +99,14 @@
 -(void)synchronizeWithVideoEditor{
     [self synchronizeClipsVideo];
     [self synchronizeClipsVideoTimeRange];
+    if (_transitionsEnabled) {
+        self.VEditor.duration = CMTimeMakeWithSeconds(_transitionDuration, 60);
+    } else {
+        self.VEditor.duration = kCMTimeInvalid;
+    }
+    [self.VEditor buildCompositionPlayBack];
+    _playerView.urlVideo = [self.VEditor playerItem];
+
 }
 
 -(void)synchronizeClipsVideo{

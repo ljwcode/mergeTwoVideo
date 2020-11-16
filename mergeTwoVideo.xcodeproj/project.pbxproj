@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		63116093255D5CE2000566DC /* eminem.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 63116092255D5CD4000566DC /* eminem.mp4 */; };
 		63116094255D5CE2000566DC /* minemine.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 63116091255D5CD4000566DC /* minemine.mp4 */; };
 		63116099255D612A000566DC /* videoEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63116098255D612A000566DC /* videoEditor.m */; };
+		6341073525622F2E00BBD365 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6341073225622F2E00BBD365 /* Pause.png */; };
+		6341073625622F2E00BBD365 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 6341073325622F2E00BBD365 /* Player.png */; };
+		6341073725622F2E00BBD365 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 6341073425622F2E00BBD365 /* point.png */; };
 		6345EC47255E833900E3876F /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6345EC46255E833900E3876F /* applelogo.png */; };
 		6345EC4B255E8AA600E3876F /* videoPlayerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345EC4A255E8AA600E3876F /* videoPlayerToolView.m */; };
 		6345EC4F255E8B3D00E3876F /* VideoPlayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345EC4E255E8B3D00E3876F /* VideoPlayerContainerView.m */; };
@@ -41,6 +44,9 @@
 		63116092255D5CD4000566DC /* eminem.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = eminem.mp4; sourceTree = "<group>"; };
 		63116097255D6129000566DC /* videoEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = videoEditor.h; sourceTree = "<group>"; };
 		63116098255D612A000566DC /* videoEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = videoEditor.m; sourceTree = "<group>"; };
+		6341073225622F2E00BBD365 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		6341073325622F2E00BBD365 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		6341073425622F2E00BBD365 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		6345EC46255E833900E3876F /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		6345EC49255E8AA600E3876F /* videoPlayerToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = videoPlayerToolView.h; sourceTree = "<group>"; };
 		6345EC4A255E8AA600E3876F /* videoPlayerToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = videoPlayerToolView.m; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 		63116076255D5CBD000566DC /* mergeTwoVideo */ = {
 			isa = PBXGroup;
 			children = (
+				6341073225622F2E00BBD365 /* Pause.png */,
+				6341073325622F2E00BBD365 /* Player.png */,
+				6341073425622F2E00BBD365 /* point.png */,
 				6345EC46255E833900E3876F /* applelogo.png */,
 				63116092255D5CD4000566DC /* eminem.mp4 */,
 				63116091255D5CD4000566DC /* minemine.mp4 */,
@@ -188,10 +197,13 @@
 			files = (
 				63116093255D5CE2000566DC /* eminem.mp4 in Resources */,
 				6345EC47255E833900E3876F /* applelogo.png in Resources */,
+				6341073625622F2E00BBD365 /* Player.png in Resources */,
 				63116094255D5CE2000566DC /* minemine.mp4 in Resources */,
 				63116087255D5CC6000566DC /* LaunchScreen.storyboard in Resources */,
+				6341073725622F2E00BBD365 /* point.png in Resources */,
 				63116084255D5CC6000566DC /* Assets.xcassets in Resources */,
 				63116082255D5CBD000566DC /* Main.storyboard in Resources */,
+				6341073525622F2E00BBD365 /* Pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
